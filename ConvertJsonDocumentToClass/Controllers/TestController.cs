@@ -8,22 +8,9 @@ namespace ConvertJsonDocumentToClass.Controllers
     [Route("[controller]")]
     public class TestController : ControllerBase
     {
-        [HttpPost("T")]
+        [HttpPost]
         public TempClass? Post([FromBody] JsonDocument request)
-        {
-            var requestJson = new StringBuilder().Append('{');
-            foreach (var property in request.RootElement.EnumerateObject())
-            {
-                requestJson.Append('\"')
-                .Append(property.Name)
-                .Append("\" : \"")
-                .Append(property.Value)
-                .Append("\",");
-            }
-            requestJson.Remove(requestJson.Length - 1, 1);
-            requestJson.Append('}');
-            return JsonSerializer.Deserialize<TempClass>(requestJson.ToString());
-        }
+        => request.Deserialize<TempClass>();
     }
 }
 public class TempClass
