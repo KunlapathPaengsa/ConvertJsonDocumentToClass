@@ -11,13 +11,4 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="ManageProcess">
-      <HintPath>..\..\PaymentGatewayCIBPay\ManageProcess\bin\Debug\ManageProcess.dll</HintPath>
-    </Reference>
-    <Reference Include="PaymentGatewayCIBPay.DTOs">
-      <HintPath>..\..\PaymentGatewayCIBPay\PaymentGatewayCIBPay.DTOs\bin\Debug\netstandard2.0\PaymentGatewayCIBPay.DTOs.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>
